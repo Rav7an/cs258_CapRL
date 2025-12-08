@@ -1,0 +1,16 @@
+torch
+transformers
+accelerate
+bitsandbytes
+peft
+trl
+datasets
+pillow
+requests
+pandas
+matplotlib
+scikit-learn
+qwen_vl_utils
+einops
+tqdm
+flash-attn
