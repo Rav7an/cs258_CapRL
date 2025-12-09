@@ -1,20 +1,20 @@
 import os
 import json
 import torch
+import re
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Optional, List, Dict, Any
 from transformers import Qwen2VLForConditionalGeneration, AutoProcessor, AutoModelForCausalLM, AutoTokenizer
 from trl import GRPOTrainer, GRPOConfig
 from datasets import Dataset
 from qwen_vl_utils import process_vision_info
 import logging
+from PIL import Image
+from tqdm import tqdm
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-# Enable TF32 for speed
-torch.set_float32_matmul_precision('high')
 
 # Configuration
 DATASET_PATH = "caprl_mcq_dataset_final.jsonl"
@@ -81,7 +81,7 @@ Answer:"""
         generated_ids = reward_model.generate(
             **inputs,
             max_new_tokens=5,
-            temperature=0.1
+            temperature=0.1 # Low temp for deterministic evaluation
         )
         
     generated_ids_trimmed = [
@@ -93,18 +93,16 @@ Answer:"""
         predicted_label = "Unknown"
         clean_response = response.strip().upper()
         
-        # Simple parsing
-        for char in clean_response:
-            if char in ['A', 'B', 'C', 'D']:
-                predicted_label = char
-                break
-        
-        # Fallback heuristics
-        if predicted_label == "Unknown":
-             if "A)" in clean_response or "A." in clean_response: predicted_label = "A"
-             elif "B)" in clean_response or "B." in clean_response: predicted_label = "B"
-             elif "C)" in clean_response or "C." in clean_response: predicted_label = "C"
-             elif "D)" in clean_response or "D." in clean_response: predicted_label = "D"
+        # Robust parsing using Regex
+        match = re.search(r'\b([A-D])\b', clean_response)
+        if match:
+            predicted_label = match.group(1)
+        else:
+            # Fallback heuristics
+            if "A)" in clean_response or "A." in clean_response: predicted_label = "A"
+            elif "B)" in clean_response or "B." in clean_response: predicted_label = "B"
+            elif "C)" in clean_response or "C." in clean_response: predicted_label = "C"
+            elif "D)" in clean_response or "D." in clean_response: predicted_label = "D"
              
         # Reward: 1.0 for correct, 0.0 for incorrect
         if predicted_label == correct_label:
@@ -116,153 +114,122 @@ Answer:"""
 
 def prepare_dataset():
     data = []
+    print("Loading dataset metadata...")
     with open(DATASET_PATH, 'r') as f:
-        for line in f:
-            try:
-                item = json.loads(line)
-                # Add local image path
-                filename = item['image_id'].split("train2017/")[-1]
-                local_path = os.path.join(IMAGE_DIR, filename)
-                if os.path.exists(local_path):
-                    item['image_path_local'] = local_path
-                    
-                    # Format prompt for Qwen2-VL
-                    # We need to provide the messages structure that the model expects
-                    # But GRPOTrainer expects a text prompt usually? 
-                    # Wait, for VLMs in TRL, we usually pass the formatted inputs.
-                    # Let's try passing the raw messages and let the collator handle it if possible.
-                    # Or we pre-format using the processor.
-                    
-                    messages = [
-                        {
-                            "role": "user",
-                            "content": [
-                                {"type": "image", "image": local_path},
-                                {"type": "text", "text": "Describe this image in detail."},
-                            ],
-                        }
-                    ]
-                    item['prompt'] = messages
-                    data.append(item)
-            except json.JSONDecodeError:
-                pass
+        lines = f.readlines()
+        
+    for line in tqdm(lines, desc="Parsing items"):
+        try:
+            item = json.loads(line)
+            # Add local image path
+            filename = item['image_id'].split("train2017/")[-1]
+            local_path = os.path.join(IMAGE_DIR, filename)
+            if os.path.exists(local_path):
+                item['image_path_local'] = local_path
+                # We don't process images here to save RAM
+                data.append(item)
+        except json.JSONDecodeError:
+            pass
     return Dataset.from_list(data)
 
+def get_transform(processor):
+    def transform(batch):
+        # batch is a dict of lists: {'image_path_local': [...], 'question': [...], ...}
+        
+        texts = []
+        images = []
+        
+        for image_path in batch['image_path_local']:
+            messages = [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "image", "image": image_path},
+                        {"type": "text", "text": "Describe this image in detail."},
+                    ],
+                }
+            ]
+            image_inputs, video_inputs = process_vision_info(messages)
+            text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+            
+            texts.append(text)
+            images.append(image_inputs)
+            
+        inputs = processor(
+            text=texts,
+            images=images,
+            padding="max_length",
+            max_length=2048,
+            truncation=True,
+            return_tensors="pt",
+        )
+        
+        # Return dict of lists/tensors
+        return {
+            'input_ids': inputs['input_ids'],
+            'attention_mask': inputs['attention_mask'],
+            'pixel_values': inputs['pixel_values'],
+            'image_grid_thw': inputs['image_grid_thw'],
+            'prompt': texts, # GRPOTrainer needs this
+            'question': batch['question'],
+            'correct_label': batch['correct_label']
+        }
+    return transform
+
 def main():
-    # Load Dataset
+    # Load Processor
+    processor = AutoProcessor.from_pretrained(VL_MODEL_ID)
+
+    # Load Dataset (Lightweight)
     dataset = prepare_dataset()
     print(f"Dataset size: {len(dataset)}")
     
-    # Load Processor
-    processor = AutoProcessor.from_pretrained(VL_MODEL_ID)
-    
-    # Monkey patch apply_chat_template to handle batching of messages with images
-    original_apply_chat_template = processor.apply_chat_template
-    
-    def patched_apply_chat_template(*args, **kwargs):
-        # Debugging
-        # print(f"DEBUG: args={len(args)}, kwargs={kwargs.keys()}")
-        
-        if len(args) > 0:
-            # Check if first arg is processor instance (self)
-            if hasattr(args[0], 'tokenizer') and hasattr(args[0], 'apply_chat_template'):
-                conversations = args[1] if len(args) > 1 else kwargs.get('conversations')
-            else:
-                conversations = args[0]
-        else:
-            conversations = kwargs.get('conversations')
-            
-        if conversations is None:
-             # Fallback or error
-             # Maybe it was passed as 'conversation'?
-             conversations = kwargs.get('conversation')
-             
-        texts = []
-        images = []
-        videos = []
-        
-        for conv in conversations:
-            # Clean conv: remove None values from content dicts (caused by Arrow/Dataset schema)
-            cleaned_conv = []
-            for msg in conv:
-                new_content = []
-                if isinstance(msg['content'], list):
-                    for item in msg['content']:
-                        new_item = {k: v for k, v in item.items() if v is not None}
-                        new_content.append(new_item)
-                else:
-                    new_content = msg['content']
-                
-                cleaned_conv.append({'role': msg['role'], 'content': new_content})
-            
-            conv = cleaned_conv
-
-            try:
-                text = original_apply_chat_template(conv, tokenize=False, add_generation_prompt=True)
-                image_inputs, video_inputs = process_vision_info(conv)
-                texts.append(text)
-                images.append(image_inputs)
-                videos.append(video_inputs)
-            except Exception as e:
-                print(f"Error processing conversation: {conv}")
-                print(f"Error: {e}")
-                raise e
-        
-        # Check if we have any images or videos
-        has_images = any(img is not None for img in images)
-        has_videos = any(vid is not None for vid in videos)
-        
-        inputs = processor(
-            text=texts,
-            images=images if has_images else None,
-            videos=videos if has_videos else None,
-            padding=True,
-            return_tensors="pt",
-        )
-        return inputs
-        
-    # processor.apply_chat_template = types.MethodType(patched_apply_chat_template, processor)
-    processor.apply_chat_template = patched_apply_chat_template
+    # Set Transform (Lazy Processing)
+    dataset.set_transform(get_transform(processor))
     
     # Training Config
     training_args = GRPOConfig(
         output_dir=OUTPUT_DIR,
         learning_rate=1e-6,
-        per_device_train_batch_size=32, # Reduced to 32 to avoid OOM
-        gradient_accumulation_steps=2, # Accumulate to reach effective batch size
-        num_generations=8, 
-        max_completion_length=256,
+        per_device_train_batch_size=16, # H100 Optimized
+        gradient_accumulation_steps=1,
+        num_generations=8, # Group size
+        max_completion_length=512, # Increased to avoid clipping
         num_train_epochs=1,
         dataloader_num_workers=4,
         logging_steps=10,
         save_steps=100,
+        save_total_limit=2,
         bf16=True,
-        report_to="none",
-        remove_unused_columns=False
+        report_to="tensorboard",
+        logging_dir="output/logs",
+        remove_unused_columns=False, # Essential for passing 'question', 'correct_label'
+        temperature=0.9, # Must be > 0 for GRPO to work
     )
     
     # Load Model (Actor)
-    # We use Qwen2VLForConditionalGeneration
     model = Qwen2VLForConditionalGeneration.from_pretrained(
         VL_MODEL_ID,
         torch_dtype=torch.bfloat16,
-        attn_implementation="sdpa"
+        attn_implementation="sdpa",
+        device_map="auto" # Let accelerate handle placement
     )
     
-    # Enable gradient checkpointing to save memory
+    # Enable gradient checkpointing
     model.gradient_checkpointing_enable()
     
     # Trainer
+    # We pass processing_class=processor so it uses the default collator which should handle the tensors
     trainer = GRPOTrainer(
         model=model,
-        processing_class=processor,
         reward_funcs=reward_function,
         args=training_args,
         train_dataset=dataset,
+        processing_class=processor,
     )
     
     print("Starting GRPO Training...")
-    trainer.train()
+    trainer.train(resume_from_checkpoint=True)
     
     print("Saving model...")
     trainer.save_model(OUTPUT_DIR)
