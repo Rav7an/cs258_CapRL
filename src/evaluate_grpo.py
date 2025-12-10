@@ -14,21 +14,22 @@ from qwen_vl_utils import process_vision_info
 # ===========================
 DATASET_PATH = "caprl_mcq_dataset_final.jsonl"
 IMAGE_DIR = "data/images"  # Path to the images folder
-OUTPUT_REPORT_JSON = "evaluation_report.json"
-OUTPUT_REPORT_MD = "analysis_summary.md"
+OUTPUT_REPORT_JSON = "evaluation_report_grpo.json"
+OUTPUT_REPORT_MD = "analysis_summary_grpo.md"
 
 # Models to evaluate
 MODELS_TO_EVALUATE = {
-    "PPO": "output/ppo_qwen2vl_v3/best",
-    "GRPO": "output/grpo_qwen2vl_3/best",
-    "REINFORCE": "output/reinforce_qwen2vl/best",
+    "GRPO_BEST": "output/grpo_qwen2vl_3/best",
+    "GRPO-STEP-7500": "output/grpo_qwen2vl_3/checkpoint-step-7500",
+    "GRPO-STEP-14500": "output/grpo_qwen2vl_3/checkpoint-step-14500",
+    "GRPO-STEP-15000": "output/grpo_qwen2vl_3/checkpoint-step-15000",
     # "Baseline": "Qwen/Qwen2-VL-2B-Instruct" # Optional: Add baseline if needed
 }
 
 LLM_MODEL_ID = "Qwen/Qwen2.5-3B-Instruct"
 MAX_NEW_TOKENS_CAPTION = 256
 MAX_NEW_TOKENS_ANSWER = 32
-EVAL_SAMPLES = 100  # Number of samples to evaluate per model (set to None for full dataset)
+EVAL_SAMPLES = 400  # Number of samples to evaluate per model (set to None for full dataset)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -303,7 +304,7 @@ def main():
                 f.write(f"| {name} | {metrics['accuracy']:.2%} | {metrics['correct']} / {metrics['total']} | {metrics['avg_caption_length']:.1f} words |\n")
         
         f.write("\n## Qualitative Analysis (First 5 Samples)\n")
-        for sample in detailed_samples[:5]:
+        for sample in detailed_samples[:50]:
             f.write(f"### Sample {sample['id']}\n")
             f.write(f"**Image:** `{sample['image_path']}`\n\n")
             f.write(f"**Question:** {sample['question']}\n\n")
