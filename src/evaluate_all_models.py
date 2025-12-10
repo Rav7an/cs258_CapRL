@@ -19,9 +19,9 @@ OUTPUT_REPORT_MD = "analysis_summary.md"
 
 # Models to evaluate
 MODELS_TO_EVALUATE = {
-    "PPO": "output/ppo_qwen2vl_v3/best",
-    "GRPO": "output/grpo_qwen2vl_3/best",
-    "REINFORCE": "output/reinforce_qwen2vl/best",
+    "PPO": "output/ppo_qwen2vl_v3",
+    "GRPO": "output/grpo_qwen2vl_3",
+    "REINFORCE": "output/reinforce_qwen2vl",
     # "Baseline": "Qwen/Qwen2-VL-2B-Instruct" # Optional: Add baseline if needed
 }
 
