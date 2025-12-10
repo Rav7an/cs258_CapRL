@@ -1,0 +1,544 @@
+{
+  "summary": {
+    "PPO": {
+      "accuracy": 0.59,
+      "correct": 59,
+      "total": 100,
+      "avg_caption_length": 16.2
+    },
+    "GRPO": {
+      "accuracy": 0.63,
+      "correct": 63,
+      "total": 100,
+      "avg_caption_length": 60.0
+    },
+    "REINFORCE": {
+      "accuracy": 0.3,
+      "correct": 30,
+      "total": 100,
+      "avg_caption_length": 1.0
+    }
+  },
+  "detailed_samples": [
+    {
+      "id": 0,
+      "image_path": "coco/train2017/000000012209.jpg",
+      "question": "What is the player doing in the image?\n   - A) He is catching a ball\n   - B) He is running\n   - C) He is swinging a bat\n   - D) He is pitching",
+      "correct_label": "C",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A baseball player holding a bat on a field.",
+          "caption_length": 9,
+          "predicted_label": "C",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A baseball player in a striped uniform is holding a bat and preparing to swing. The scene is set on a baseball field with a netted fence in the background. Spectators are visible in the foreground, some taking photos. The player is wearing a helmet and a belt. The field has a green grassy area and a dirt infield.",
+          "caption_length": 59,
+          "predicted_label": "C",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "B",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 1,
+      "image_path": "coco/train2017/000000012209.jpg",
+      "question": "What is the player's uniform number?\n   - A) 13\n   - B) 15\n   - C) 14\n   - D) 12",
+      "correct_label": "C",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A baseball player holding a bat on a field.",
+          "caption_length": 9,
+          "predicted_label": "D",
+          "is_correct": false
+        },
+        "GRPO": {
+          "caption": "A baseball player in a striped uniform is holding a bat and preparing to swing. The scene is set on a baseball field with a netted fence in the background. Spectators are visible in the foreground, some taking photos. The player is wearing a helmet and a belt. The field has a green grassy area and a dirt infield.",
+          "caption_length": 59,
+          "predicted_label": "D",
+          "is_correct": false
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "D",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 2,
+      "image_path": "coco/train2017/000000012209.jpg",
+      "question": "What is the position of the player in the image?\n   - A) Pitcher\n   - B) Catcher\n   - C) Base runner\n   - D) Baseball player",
+      "correct_label": "D",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A baseball player holding a bat on a field.",
+          "caption_length": 9,
+          "predicted_label": "D",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A baseball player in a striped uniform is holding a bat and preparing to swing. The scene is set on a baseball field with a netted fence in the background. Spectators are visible in the foreground, some taking photos. The player is wearing a helmet and a belt. The field has a green grassy area and a dirt infield.",
+          "caption_length": 59,
+          "predicted_label": "D",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "D",
+          "is_correct": true
+        }
+      }
+    },
+    {
+      "id": 3,
+      "image_path": "coco/train2017/000000012209.jpg",
+      "question": "What is the atmosphere of the scene in the background?\n   - A) Calm and peaceful\n   - B) Excited and energetic\n   - C) Dull and uninteresting\n   - D) Dark and ominous",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A baseball player holding a bat on a field.",
+          "caption_length": 9,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A baseball player in a striped uniform is holding a bat and preparing to swing. The scene is set on a baseball field with a netted fence in the background. Spectators are visible in the foreground, some taking photos. The player is wearing a helmet and a belt. The field has a green grassy area and a dirt infield.",
+          "caption_length": 59,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "C",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 4,
+      "image_path": "coco/train2017/000000022411.jpg",
+      "question": "What is the number of students in the image?\n   - A) 5\n   - B) 6\n   - C) 7\n   - D) 8",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A group of people sitting in a library, eating pizza and talking.",
+          "caption_length": 12,
+          "predicted_label": "C",
+          "is_correct": false
+        },
+        "GRPO": {
+          "caption": "A group of teenagers is gathered in a library, sitting at tables and eating pizza. The room is well-lit with natural light coming in through large windows, and there are bookshelves filled with books in the background. The atmosphere is casual and relaxed, with some students standing and others sitting. The teenagers are engaged in conversation and enjoying their meal together.",
+          "caption_length": 61,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "C",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 5,
+      "image_path": "coco/train2017/000000022411.jpg",
+      "question": "What is the composition of the group of students?\n   - A) 3 girls and 3 boys\n   - B) 4 girls and 2 boys\n   - C) 5 boys and 1 girl\n   - D) 2 girls and 4 boys",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A group of people sitting in a library, eating pizza and talking.",
+          "caption_length": 12,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A group of teenagers is gathered in a library, sitting at tables and eating pizza. The room is well-lit with natural light coming in through large windows, and there are bookshelves filled with books in the background. The atmosphere is casual and relaxed, with some students standing and others sitting. The teenagers are engaged in conversation and enjoying their meal together.",
+          "caption_length": 61,
+          "predicted_label": "D",
+          "is_correct": false
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "B",
+          "is_correct": true
+        }
+      }
+    },
+    {
+      "id": 6,
+      "image_path": "coco/train2017/000000022411.jpg",
+      "question": "What is the main activity of the students in the image?\n   - A) Reading books\n   - B) Playing a game\n   - C) Eating pizza\n   - D) Drawing",
+      "correct_label": "C",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A group of people sitting in a library, eating pizza and talking.",
+          "caption_length": 12,
+          "predicted_label": "C",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A group of teenagers is gathered in a library, sitting at tables and eating pizza. The room is well-lit with natural light coming in through large windows, and there are bookshelves filled with books in the background. The atmosphere is casual and relaxed, with some students standing and others sitting. The teenagers are engaged in conversation and enjoying their meal together.",
+          "caption_length": 61,
+          "predicted_label": "C",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "A",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 7,
+      "image_path": "coco/train2017/000000022411.jpg",
+      "question": "What is the overall mood of the image?\n   - A) Sad\n   - B) Neutral\n   - C) Happy\n   - D) Angry",
+      "correct_label": "C",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A group of people sitting in a library, eating pizza and talking.",
+          "caption_length": 12,
+          "predicted_label": "C",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A group of teenagers is gathered in a library, sitting at tables and eating pizza. The room is well-lit with natural light coming in through large windows, and there are bookshelves filled with books in the background. The atmosphere is casual and relaxed, with some students standing and others sitting. The teenagers are engaged in conversation and enjoying their meal together.",
+          "caption_length": 61,
+          "predicted_label": "C",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "B",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 8,
+      "image_path": "coco/train2017/000000017923.jpg",
+      "question": "What is the puppy doing in the image?\n   - A) The puppy is playing with the sneakers\n   - B) The puppy is sleeping on the sneakers\n   - C) The puppy is sitting on the sneakers\n   - D) The puppy is jumping on the sneakers",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A small dog is sleeping on a pair of white sneakers with red laces. The background is a brick pavement.",
+          "caption_length": 20,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A small, brown dog is curled up on top of a pair of white sneakers with red laces, which are worn by a person sitting on a brick or stone surface. The dog appears to be resting or sleeping, and the scene is captured from an overhead angle.",
+          "caption_length": 48,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "A",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 9,
+      "image_path": "coco/train2017/000000017923.jpg",
+      "question": "What is the color of the puppy's fur?\n   - A) Black\n   - B) White\n   - C) Light brown\n   - D) Grey",
+      "correct_label": "C",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A small dog is sleeping on a pair of white sneakers with red laces. The background is a brick pavement.",
+          "caption_length": 20,
+          "predicted_label": "B",
+          "is_correct": false
+        },
+        "GRPO": {
+          "caption": "A small, brown dog is curled up on top of a pair of white sneakers with red laces, which are worn by a person sitting on a brick or stone surface. The dog appears to be resting or sleeping, and the scene is captured from an overhead angle.",
+          "caption_length": 48,
+          "predicted_label": "C",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "B",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 10,
+      "image_path": "coco/train2017/000000017923.jpg",
+      "question": "What is the color of the sneakers?\n   - A) Black\n   - B) White\n   - C) Red\n   - D) Blue",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A small dog is sleeping on a pair of white sneakers with red laces. The background is a brick pavement.",
+          "caption_length": 20,
+          "predicted_label": "C",
+          "is_correct": false
+        },
+        "GRPO": {
+          "caption": "A small, brown dog is curled up on top of a pair of white sneakers with red laces, which are worn by a person sitting on a brick or stone surface. The dog appears to be resting or sleeping, and the scene is captured from an overhead angle.",
+          "caption_length": 48,
+          "predicted_label": "C",
+          "is_correct": false
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "A",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 11,
+      "image_path": "coco/train2017/000000017923.jpg",
+      "question": "What is the composition of the image?\n   - A) The puppy is in the center of the image\n   - B) The puppy is on the left side of the image\n   - C) The puppy is on the right side of the image\n   - D) The puppy is in the foreground of the image",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A small dog is sleeping on a pair of white sneakers with red laces. The background is a brick pavement.",
+          "caption_length": 20,
+          "predicted_label": "A",
+          "is_correct": false
+        },
+        "GRPO": {
+          "caption": "A small, brown dog is curled up on top of a pair of white sneakers with red laces, which are worn by a person sitting on a brick or stone surface. The dog appears to be resting or sleeping, and the scene is captured from an overhead angle.",
+          "caption_length": 48,
+          "predicted_label": "A",
+          "is_correct": false
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "A",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 12,
+      "image_path": "coco/train2017/000000009721.jpg",
+      "question": "What is the main focus of the image?\n   - A) The background of the image\n   - B) The white computer keyboard\n   - C) The white computer mouse\n   - D) The desk",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A white computer keyboard and mouse with a logo for photography.",
+          "caption_length": 11,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A white computer keyboard and mouse are shown, with the words \"selinayip photography\" written on the lower right side of the keyboard. The mouse is positioned on top of the keyboard, and the overall color scheme is a soft, pastel tone.",
+          "caption_length": 41,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "A",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 13,
+      "image_path": "coco/train2017/000000009721.jpg",
+      "question": "What is the position of the white computer mouse in the image?\n   - A) On the left side of the keyboard\n   - B) Just to the right of the keyboard\n   - C) Below the keyboard\n   - D) On the desk",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A white computer keyboard and mouse with a logo for photography.",
+          "caption_length": 11,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A white computer keyboard and mouse are shown, with the words \"selinayip photography\" written on the lower right side of the keyboard. The mouse is positioned on top of the keyboard, and the overall color scheme is a soft, pastel tone.",
+          "caption_length": 41,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "D",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 14,
+      "image_path": "coco/train2017/000000009721.jpg",
+      "question": "What is the composition of the image?\n   - A) The keyboard and mouse are placed in the center of the frame\n   - B) The keyboard and mouse are placed on the left side of the frame\n   - C) The keyboard and mouse are placed on the right side of the frame\n   - D) The keyboard and mouse are placed on the desk",
+      "correct_label": "A",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A white computer keyboard and mouse with a logo for photography.",
+          "caption_length": 11,
+          "predicted_label": "A",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A white computer keyboard and mouse are shown, with the words \"selinayip photography\" written on the lower right side of the keyboard. The mouse is positioned on top of the keyboard, and the overall color scheme is a soft, pastel tone.",
+          "caption_length": 41,
+          "predicted_label": "C",
+          "is_correct": false
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "B",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 15,
+      "image_path": "coco/train2017/000000009721.jpg",
+      "question": "What is the mood conveyed by the image?\n   - A) Busy and chaotic\n   - B) Calm and ready\n   - C) Tired and unmotivated\n   - D) Confused and disorganized",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A white computer keyboard and mouse with a logo for photography.",
+          "caption_length": 11,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A white computer keyboard and mouse are shown, with the words \"selinayip photography\" written on the lower right side of the keyboard. The mouse is positioned on top of the keyboard, and the overall color scheme is a soft, pastel tone.",
+          "caption_length": 41,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "A",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 16,
+      "image_path": "coco/train2017/000000006760.jpg",
+      "question": "What is the woman wearing on her shirt?\n   - A) A red shirt\n   - B) A blue shirt with a white design on the left side\n   - C) A green shirt\n   - D) A yellow shirt",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A woman in a blue shirt is holding a hot dog.",
+          "caption_length": 11,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A woman in a blue long-sleeve shirt is holding a hot dog in a bun, looking surprised or excited. The background is dark and blurred, suggesting an outdoor setting.",
+          "caption_length": 29,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "B",
+          "is_correct": true
+        }
+      }
+    },
+    {
+      "id": 17,
+      "image_path": "coco/train2017/000000006760.jpg",
+      "question": "What is the woman holding in her hand?\n   - A) A book\n   - B) A hot dog in a white bun\n   - C) A camera\n   - D) A phone",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A woman in a blue shirt is holding a hot dog.",
+          "caption_length": 11,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "GRPO": {
+          "caption": "A woman in a blue long-sleeve shirt is holding a hot dog in a bun, looking surprised or excited. The background is dark and blurred, suggesting an outdoor setting.",
+          "caption_length": 29,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "D",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 18,
+      "image_path": "coco/train2017/000000006760.jpg",
+      "question": "What is the color of the hot dog's sausage?\n   - A) Yellow\n   - B) Red\n   - C) Green\n   - D) Blue",
+      "correct_label": "B",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A woman in a blue shirt is holding a hot dog.",
+          "caption_length": 11,
+          "predicted_label": "D",
+          "is_correct": false
+        },
+        "GRPO": {
+          "caption": "A woman in a blue long-sleeve shirt is holding a hot dog in a bun, looking surprised or excited. The background is dark and blurred, suggesting an outdoor setting.",
+          "caption_length": 29,
+          "predicted_label": "B",
+          "is_correct": true
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "A",
+          "is_correct": false
+        }
+      }
+    },
+    {
+      "id": 19,
+      "image_path": "coco/train2017/000000006760.jpg",
+      "question": "What is the woman's hair style?\n   - A) Short and curly\n   - B) Long and straight\n   - C) Ponytail\n   - D) Braids",
+      "correct_label": "C",
+      "model_outputs": {
+        "PPO": {
+          "caption": "A woman in a blue shirt is holding a hot dog.",
+          "caption_length": 11,
+          "predicted_label": "A",
+          "is_correct": false
+        },
+        "GRPO": {
+          "caption": "A woman in a blue long-sleeve shirt is holding a hot dog in a bun, looking surprised or excited. The background is dark and blurred, suggesting an outdoor setting.",
+          "caption_length": 29,
+          "predicted_label": "A",
+          "is_correct": false
+        },
+        "REINFORCE": {
+          "caption": ",copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy",
+          "caption_length": 1,
+          "predicted_label": "C",
+          "is_correct": true
+        }
+      }
+    }
+  ]
+}

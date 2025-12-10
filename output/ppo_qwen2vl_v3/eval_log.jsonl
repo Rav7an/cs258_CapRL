@@ -5,3 +5,12 @@
 {"step": 1250, "eval_mean_reward": 0.5384615384615384, "timestamp": "2025-12-10T06:54:34.387277"}
 {"step": 1500, "eval_mean_reward": 0.6153846153846154, "timestamp": "2025-12-10T07:23:59.006153"}
 {"step": 1750, "eval_mean_reward": 0.4230769230769231, "timestamp": "2025-12-10T07:52:42.568705"}
+{"step": 2000, "eval_mean_reward": 0.5, "timestamp": "2025-12-10T08:22:32.960169"}
+{"step": 2250, "eval_mean_reward": 0.5, "timestamp": "2025-12-10T08:52:04.817904"}
+{"step": 2500, "eval_mean_reward": 0.5384615384615384, "timestamp": "2025-12-10T09:21:11.918217"}
+{"step": 2750, "eval_mean_reward": 0.46153846153846156, "timestamp": "2025-12-10T09:49:39.661378"}
+{"step": 3000, "eval_mean_reward": 0.2692307692307692, "timestamp": "2025-12-10T10:18:10.407441"}
+{"step": 3250, "eval_mean_reward": 0.2692307692307692, "timestamp": "2025-12-10T10:45:44.975923"}
+{"step": 3500, "eval_mean_reward": 0.2692307692307692, "timestamp": "2025-12-10T11:13:41.946759"}
+{"step": 3750, "eval_mean_reward": 0.2692307692307692, "timestamp": "2025-12-10T11:41:20.134518"}
+{"step": 4000, "eval_mean_reward": 0.2692307692307692, "timestamp": "2025-12-10T12:08:44.785696"}
