@@ -9,7 +9,7 @@
 
 ## Qualitative Analysis (First 5 Samples)
 ### Sample 0
-**Image:** `coco/train2017/000000012209.jpg`
+**Image:** ![Image](eval_images/000000012209.jpg)
 
 **Question:** What is the player doing in the image?
    - A) He is catching a ball
@@ -19,18 +19,18 @@
 
 **Correct Answer:** C
 
-**PPO** (✅ Pred: C):
+**PPO** (Pred: C):
 > A baseball player holding a bat on a field.
 
-**GRPO** (✅ Pred: C):
+**GRPO** (Pred: C):
 > A baseball player in a striped uniform is holding a bat and preparing to swing. The scene is set on a baseball field with a netted fence in the background. Spectators are visible in the foreground, some taking photos. The player is wearing a helmet and a belt. The field has a green grassy area and a dirt infield.
 
-**REINFORCE** (❌ Pred: B):
+**REINFORCE** (Pred: B):
 > ,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy
 
 ---
 ### Sample 1
-**Image:** `coco/train2017/000000012209.jpg`
+**Image:** ![Image](eval_images/000000012209.jpg)
 
 **Question:** What is the player's uniform number?
    - A) 13
@@ -40,18 +40,18 @@
 
 **Correct Answer:** C
 
-**PPO** (❌ Pred: D):
+**PPO** (Pred: D):
 > A baseball player holding a bat on a field.
 
-**GRPO** (❌ Pred: D):
+**GRPO** (Pred: D):
 > A baseball player in a striped uniform is holding a bat and preparing to swing. The scene is set on a baseball field with a netted fence in the background. Spectators are visible in the foreground, some taking photos. The player is wearing a helmet and a belt. The field has a green grassy area and a dirt infield.
 
-**REINFORCE** (❌ Pred: D):
+**REINFORCE** (Pred: D):
 > ,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy
 
 ---
 ### Sample 2
-**Image:** `coco/train2017/000000012209.jpg`
+**Image:** ![Image](eval_images/000000012209.jpg)
 
 **Question:** What is the position of the player in the image?
    - A) Pitcher
@@ -61,18 +61,18 @@
 
 **Correct Answer:** D
 
-**PPO** (✅ Pred: D):
+**PPO** (Pred: D):
 > A baseball player holding a bat on a field.
 
-**GRPO** (✅ Pred: D):
+**GRPO** (Pred: D):
 > A baseball player in a striped uniform is holding a bat and preparing to swing. The scene is set on a baseball field with a netted fence in the background. Spectators are visible in the foreground, some taking photos. The player is wearing a helmet and a belt. The field has a green grassy area and a dirt infield.
 
-**REINFORCE** (✅ Pred: D):
+**REINFORCE** (Pred: D):
 > ,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy
 
 ---
 ### Sample 3
-**Image:** `coco/train2017/000000012209.jpg`
+**Image:** ![Image](eval_images/000000012209.jpg)
 
 **Question:** What is the atmosphere of the scene in the background?
    - A) Calm and peaceful
@@ -82,18 +82,18 @@
 
 **Correct Answer:** B
 
-**PPO** (✅ Pred: B):
+**PPO** (Pred: B):
 > A baseball player holding a bat on a field.
 
-**GRPO** (✅ Pred: B):
+**GRPO** (Pred: B):
 > A baseball player in a striped uniform is holding a bat and preparing to swing. The scene is set on a baseball field with a netted fence in the background. Spectators are visible in the foreground, some taking photos. The player is wearing a helmet and a belt. The field has a green grassy area and a dirt infield.
 
-**REINFORCE** (❌ Pred: C):
+**REINFORCE** ( Pred: C):
 > ,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy
 
 ---
 ### Sample 4
-**Image:** `coco/train2017/000000022411.jpg`
+**Image:** ![Image](eval_images/000000022411.jpg)
 
 **Question:** What is the number of students in the image?
    - A) 5
@@ -103,13 +103,13 @@
 
 **Correct Answer:** B
 
-**PPO** (❌ Pred: C):
+**PPO** ( Pred: C):
 > A group of people sitting in a library, eating pizza and talking.
 
-**GRPO** (✅ Pred: B):
+**GRPO** (Pred: B):
 > A group of teenagers is gathered in a library, sitting at tables and eating pizza. The room is well-lit with natural light coming in through large windows, and there are bookshelves filled with books in the background. The atmosphere is casual and relaxed, with some students standing and others sitting. The teenagers are engaged in conversation and enjoying their meal together.
 
-**REINFORCE** (❌ Pred: C):
+**REINFORCE** ( Pred: C):
 > ,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy,copy
 
 ---

@@ -313,7 +313,7 @@ def main():
             for model_name in MODELS_TO_EVALUATE.keys():
                 if model_name in sample["model_outputs"]:
                     out = sample["model_outputs"][model_name]
-                    status = "✅" if out["is_correct"] else "❌"
+                    status = "[Correct]" if out["is_correct"] else "[Incorrect]"
                     f.write(f"**{model_name}** ({status} Pred: {out['predicted_label']}):\n")
                     f.write(f"> {out['caption']}\n\n")
             f.write("---\n")
