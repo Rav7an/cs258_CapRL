@@ -12,7 +12,7 @@ This project implements and evaluates various Reinforcement Learning (RL) algori
   - `baseline.py`: Baseline model implementation.
 - **`dataset_generation/`**: Contains notebooks (e.g., `GenQnA.ipynb`) for generating the Q&A dataset.
 - **`output/`**: Stores training logs, model checkpoints, and evaluation results.
-- **`plots/`**: Directory for generated plots and visualizations.
+- **`plots/`**: Directory for generated plots and visualizations. (depricated file can be ignored)
 
 ## Installation
 
